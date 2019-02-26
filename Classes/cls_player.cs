@@ -15,8 +15,12 @@ namespace brothersGM.Classes {
         [JsonProperty ("ID")]
         public int ID { get; set; }
 
-       [JsonProperty("Name")]
-       public string name { get; set; }
+        [JsonProperty("Name")]
+        public string name { get; set; }
+
+        [JsonProperty("Description")]
+        public string description { get; set; }
+        
     }
     public partial class player
     {

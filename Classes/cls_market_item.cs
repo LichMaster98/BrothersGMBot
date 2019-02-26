@@ -14,25 +14,56 @@ namespace brothersGM.Classes {
     public partial class marketItem : item {
         [JsonProperty("Cost")]
         public double cost { get; set; }
-
-        [JsonProperty("Max Durability")]
-        public int maxDurability { get; set; }
-
-        [JsonProperty("Durability")]
-        public int durability { get; set; }
     
         [JsonProperty("Quantity")]
         public int quantity;
 
-        public marketItem(string n, string d, double c, int MX, int D, double V, double w, int q) {
+        [JsonProperty("ShortDescription")]
+        public string shortDesc;
+        [JsonProperty("Seller")]
+        public ulong sellerID;
+        public marketItem(string n, string d, double c, double V, double w, int q, string sd) {
             name = n;
             description = d;
             value = V;
             weight = w;
             cost = c;
-            maxDurability = MX;
-            durability = D;
             quantity = q;
+            shortDesc = sd;
+        }
+
+        
+        public marketItem(item Item, double c, int q, ulong sI) {
+            name = Item.name;
+            description = Item.description;
+            value = Item.value;
+            weight = Item.weight;
+            cost = c;
+            quantity = q;
+            sellerID = sI;
+        }
+
+        public marketItem(item Item, double c, int q, string d) {
+            name = Item.name;
+            description = Item.description;
+            value = Item.value;
+            weight = Item.weight;
+            cost = c;
+            quantity = q;
+            shortDesc = d;
+        }
+        public marketItem() { //Needed for inheritence
+
+        }
+
+        public EmbedBuilder toMarketEmbed() {
+            var embed = toItemEmbed();
+            embed.Title = name;
+            embed.Description = description + System.Environment.NewLine + System.Environment.NewLine + shortDesc; /// @todo Check if this is over 2048 characters
+            embed.AddField("Cost in Gold",cost,true);
+            embed.AddField("Quantity in Stock",quantity,true);
+            embed.WithColor(21, 181, 135);
+            return embed;
         }
     }
     public partial class marketItem

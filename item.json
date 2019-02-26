@@ -1,3 +1,564 @@
 {
-    "item": []
+  "item": [
+    {
+      "weight": 2.0,
+      "id": 0,
+      "name": "Abacus",
+      "description": "A simple device useful for mathematics",
+      "value": 2.0
+    },
+    {
+      "weight": 1.0,
+      "id": 1,
+      "name": "Acid (Vial)",
+      "description": "As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged Attack against a creature or object, treating the acid as an Improvised Weapon. On a hit, the target takes 2d6 acid damage.",
+      "value": 25.0
+    },
+    {
+      "weight": 1.0,
+      "id": 2,
+      "name": "Alchemist's Fire (Flask)",
+      "description": "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged Attack against a creature or object, treating the Alchemist's Fire as an Improvised Weapon. On a hit, the target takes 1d4 fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames.",
+      "value": 50.0
+    },
+    {
+      "weight": 1.0,
+      "id": 3,
+      "name": "Arrows (20)",
+      "description": "N/A",
+      "value": 1.0
+    },
+    {
+      "weight": 1.0,
+      "id": 4,
+      "name": "Blowgun Needles (50)",
+      "description": "N/A",
+      "value": 1.0
+    },
+    {
+      "weight": 1.5,
+      "id": 5,
+      "name": "Crossbow Bolts (20)",
+      "description": "N/A",
+      "value": 1.0
+    },
+    {
+      "weight": 1.5,
+      "id": 6,
+      "name": "Sling Bullets (20)",
+      "description": "N/A",
+      "value": 0.04
+    },
+    {
+      "weight": 0.0,
+      "id": 7,
+      "name": "Antitoxin (Vial)",
+      "description": "A creature that drinks this vial of liquid gains advantage on Saving Throws against poison for 1 hour. It confers no benefit to Undead or constructs.",
+      "value": 50.0
+    },
+    {
+      "weight": 1.0,
+      "id": 8,
+      "name": "Crystal (Arcane Focus)",
+      "description": "An arcane focus is a s⁠pecial item—an orb, a Crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane Spells. A Sorcerer, Warlock, or Wizard can use such an item as a Spellcasting focus, as described in chapter 10.",
+      "value": 10.0
+    },
+    {
+      "weight": 3.0,
+      "id": 9,
+      "name": "Orb (Arcane Focus)",
+      "description": "An arcane focus is a s⁠pecial item—an orb, a Crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane Spells. A Sorcerer, Warlock, or Wizard can use such an item as a Spellcasting focus, as described in chapter 10.",
+      "value": 20.0
+    },
+    {
+      "weight": 2.0,
+      "id": 10,
+      "name": "Rod (Arcane Focus)",
+      "description": "An arcane focus is a s⁠pecial item—an orb, a Crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane Spells. A Sorcerer, Warlock, or Wizard can use such an item as a Spellcasting focus, as described in chapter 10.",
+      "value": 10.0
+    },
+    {
+      "weight": 4.0,
+      "id": 11,
+      "name": "Staff (Arcane Focus)",
+      "description": "An arcane focus is a s⁠pecial item—an orb, a Crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane Spells. A Sorcerer, Warlock, or Wizard can use such an item as a Spellcasting focus, as described in chapter 10.",
+      "value": 5.0
+    },
+    {
+      "weight": 1.0,
+      "id": 12,
+      "name": "Wand (Arcane Focus)",
+      "description": "An arcane focus is a s⁠pecial item—an orb, a Crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item—designed to channel the power of arcane Spells. A Sorcerer, Warlock, or Wizard can use such an item as a Spellcasting focus, as described in chapter 10.",
+      "value": 10.0
+    },
+    {
+      "weight": 5.0,
+      "id": 13,
+      "name": "Backpack",
+      "description": "It holds things.",
+      "value": 2.0
+    },
+    {
+      "weight": 2.0,
+      "id": 14,
+      "name": "Ball Bearings (Bag of 1000)",
+      "description": "As an action, you can spill these tiny metal balls from their pouch to cover a level, square area that is 10 feet on a side. A creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature moving through the area at half speed doesn’t need to make the save.",
+      "value": 1.0
+    },
+    {
+      "weight": 70.0,
+      "id": 15,
+      "name": "Barrel",
+      "description": "For when you need to hold more things than a backpack?",
+      "value": 2.0
+    },
+    {
+      "weight": 2.0,
+      "id": 16,
+      "name": "Basket",
+      "description": "For when you need to hold less things than a backpack?",
+      "value": 0.4
+    },
+    {
+      "weight": 7.0,
+      "id": 17,
+      "name": "Bedroll",
+      "description": "It's better than sleeping on the ground...",
+      "value": 1.0
+    },
+    {
+      "weight": 0.0,
+      "id": 18,
+      "name": "Bell",
+      "description": "It dings when you shake it",
+      "value": 1.0
+    },
+    {
+      "weight": 3.0,
+      "id": 19,
+      "name": "Blanket",
+      "description": "Makes your bed more comfortable.",
+      "value": 0.5
+    },
+    {
+      "weight": 5.0,
+      "id": 20,
+      "name": "Block and Tackle",
+      "description": "A set of pulleys with a cable threaded through them and a hook to attach to Objects, a Block and tackle allows you to hoist up to four times the weight you can normally lift.",
+      "value": 1.0
+    },
+    {
+      "weight": 5.0,
+      "id": 21,
+      "name": "Book",
+      "description": "A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on Gnomish contraptions, or just about anything else that can be represented using text or pictures. A book of Spells is a Spellbook (described later in this section).",
+      "value": 25.0
+    },
+    {
+      "weight": 2.0,
+      "id": 22,
+      "name": "Bottle (Glass)",
+      "description": "It holds 8 Ounces of Liquid",
+      "value": 2.0
+    },
+    {
+      "weight": 2.0,
+      "id": 23,
+      "name": "Bucket",
+      "description": "Mop not included",
+      "value": 0.05
+    },
+    {
+      "weight": 2.0,
+      "id": 24,
+      "name": "Caltrops (Bag of 20)",
+      "description": "As an action, you can spread a bag of Caltrops to cover a square area that is 5 feet on a side. Any creature that enters the area must succeed on a DC 15 Dexterity saving throw or stop moving this turn and take 1 piercing damage. Taking this damage reduces the creature’s walking speed by 10 feet until the creature regains at least 1 hit point. A creature moving through the area at half speed doesn’t need to make the save.",
+      "value": 1.0
+    },
+    {
+      "weight": 0.0,
+      "id": 25,
+      "name": "Candle",
+      "description": "For 1 hour, a Candle sheds bright li⁠g⁠ht in a 5-foot radius and dim li⁠g⁠ht for an additional 5 feet.",
+      "value": 0.01
+    },
+    {
+      "weight": 1.0,
+      "id": 26,
+      "name": "Case (Crossbow Bolts)",
+      "description": "This wooden case can hold up to twenty Crossbow bolts.",
+      "value": 1.0
+    },
+    {
+      "weight": 1.0,
+      "id": 27,
+      "name": "Case (Map or Scroll)",
+      "description": "This cylindrical leather case can hold up to ten rolled-up sheets of paper or five rolled-up sheets of Parchment.",
+      "value": 1.0
+    },
+    {
+      "weight": 10.0,
+      "id": 28,
+      "name": "Chain (10 Feet)",
+      "description": "A chain has 10 Hit Points. It can be burst with a successful DC 20 Strength check.",
+      "value": 5.0
+    },
+    {
+      "weight": 0.0,
+      "id": 29,
+      "name": "Chalk (One Piece)",
+      "description": "Poor mans invisibility defense",
+      "value": 0.01
+    },
+    {
+      "weight": 25.0,
+      "id": 30,
+      "name": "Chest",
+      "description": "A somewhat secure container to store your belongings in. Lock not included",
+      "value": 5.0
+    },
+    {
+      "weight": 12.0,
+      "id": 31,
+      "name": "Climber's Kit",
+      "description": "A climber’s kit includes spec⁠ial pitons, boot tips, gloves, and a harness. You can use the climber’s kit as an action to anchor yourself; when you do, you can’t fall more than 25 feet from the point where you anchored yourself, and you can’t climb more than 25 feet away from that point without undoing the anchor.",
+      "value": 25.0
+    },
+    {
+      "weight": 3.0,
+      "id": 32,
+      "name": "Clothes (Common)",
+      "description": "When you just need a pair of trousers",
+      "value": 0.5
+    },
+    {
+      "weight": 4.0,
+      "id": 33,
+      "name": "Clothes (Costume)",
+      "description": "For when you need to become that Jester you always wanted to be",
+      "value": 5.0
+    },
+    {
+      "weight": 6.0,
+      "id": 34,
+      "name": "Clothes (Fine)",
+      "description": "Did royalty actually part with this?",
+      "value": 15.0
+    },
+    {
+      "weight": 4.0,
+      "id": 35,
+      "name": "Clothes (Traveler's)",
+      "description": "There's got to be a hood included with this set of clothes",
+      "value": 2.0
+    },
+    {
+      "weight": 2.0,
+      "id": 36,
+      "name": "Component Pouch",
+      "description": "A Component pouch is a small, watertight leather belt pouch that has compartments to hold all the material Components and other spe⁠cial items you need to cast your Spells, except for those Components that have a specific cost (as indicated in a spell's description).",
+      "value": 25.0
+    },
+    {
+      "weight": 5.0,
+      "id": 37,
+      "name": "Crowbar",
+      "description": "Using a Crowbar grants advantage to Strength Checks where the crowbar’s leverage can be applied.",
+      "value": 2.0
+    },
+    {
+      "weight": 0.0,
+      "id": 38,
+      "name": "Sprig of Mistletoe (Druidic Focus)",
+      "description": "A Druidic focus might be a Sprig of mistletoe or holly, a wand or scepter made of yew or another sp⁠ecial wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a Spellcasting focus, as described in chapter 10.",
+      "value": 1.0
+    },
+    {
+      "weight": 0.0,
+      "id": 39,
+      "name": "Totem (Druidic Focus)",
+      "description": "A Druidic focus might be a Sprig of mistletoe or holly, a wand or scepter made of yew or another sp⁠ecial wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a Spellcasting focus, as described in chapter 10.",
+      "value": 1.0
+    },
+    {
+      "weight": 4.0,
+      "id": 40,
+      "name": "Wooden Staff (Druidic Focus)",
+      "description": "A Druidic focus might be a Sprig of mistletoe or holly, a wand or scepter made of yew or another sp⁠ecial wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a Spellcasting focus, as described in chapter 10.",
+      "value": 5.0
+    },
+    {
+      "weight": 4.0,
+      "id": 41,
+      "name": "Fishing Tackle",
+      "description": "This kit includes a wooden rod, silken line, corkwood bobbers, steel hooks, lead sinkers, velvet lures, and narrow netting.",
+      "value": 1.0
+    },
+    {
+      "weight": 1.0,
+      "id": 42,
+      "name": "Flask",
+      "description": "The taproom always seems to be running low on these",
+      "value": 0.02
+    },
+    {
+      "weight": 1.0,
+      "id": 43,
+      "name": "Tankard",
+      "description": "Never in stock... try a flask?",
+      "value": 0.02
+    },
+    {
+      "weight": 4.0,
+      "id": 44,
+      "name": "Grappling Hook",
+      "description": "It's a hook?",
+      "value": 2.0
+    },
+    {
+      "weight": 3.0,
+      "id": 45,
+      "name": "Hammer",
+      "description": "Small hammer, for when you need to make a house",
+      "value": 1.0
+    },
+    {
+      "weight": 10.0,
+      "id": 46,
+      "name": "Hammer (Sledge)",
+      "description": "For when you want to leave a dent",
+      "value": 2.0
+    },
+    {
+      "weight": 3.0,
+      "id": 47,
+      "name": "Healer's Kit",
+      "description": "This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 Hit Points, without needing to make a Wisdom (Medicine) check.",
+      "value": 5.0
+    },
+    {
+      "weight": 0.0,
+      "id": 48,
+      "name": "Amulet (Holy Symbol)",
+      "description": "A holy sym⁠bol is a representation of a god or pantheon. It might be an Amulet depicting a symb⁠ol representing a deity, the same sym⁠bol carefully engraved or inlaid as an Emblem on a Shield, or a tiny box holding a fragment of a sacred relic. Appendix B lists the sym⁠bols commonly associated with many gods in the multiverse. A Cleric or Paladin can use a holy sym⁠bol as a Spellcasting focus, as described in Casting a Spell. To use the sym⁠bol in this way, the caster must hold it in hand, wear it visibly, or bear it on a Shield.",
+      "value": 5.0
+    },
+    {
+      "weight": 2.0,
+      "id": 49,
+      "name": "Emblem(Holy Symbol)",
+      "description": "A holy sym⁠bol is a representation of a god or pantheon. It might be an Amulet depicting a symb⁠ol representing a deity, the same sym⁠bol carefully engraved or inlaid as an Emblem on a Shield, or a tiny box holding a fragment of a sacred relic. Appendix B lists the sym⁠bols commonly associated with many gods in the multiverse. A Cleric or Paladin can use a holy sym⁠bol as a Spellcasting focus, as described in Casting a Spell. To use the sym⁠bol in this way, the caster must hold it in hand, wear it visibly, or bear it on a Shield.",
+      "value": 5.0
+    },
+    {
+      "weight": 1.0,
+      "id": 50,
+      "name": "Reliquary (Holy Symbol)",
+      "description": "A holy sym⁠bol is a representation of a god or pantheon. It might be an Amulet depicting a symb⁠ol representing a deity, the same sym⁠bol carefully engraved or inlaid as an Emblem on a Shield, or a tiny box holding a fragment of a sacred relic. Appendix B lists the sym⁠bols commonly associated with many gods in the multiverse. A Cleric or Paladin can use a holy sym⁠bol as a Spellcasting focus, as described in Casting a Spell. To use the sym⁠bol in this way, the caster must hold it in hand, wear it visibly, or bear it on a Shield.",
+      "value": 5.0
+    },
+    {
+      "weight": 1.0,
+      "id": 51,
+      "name": "Holy Water (Flask)",
+      "description": "As an action, you can splash the contents of this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. In either case, make a ranged Attack against a target creature, treating the Holy Water as an Improvised Weapon. If the target is a fiend or Undead, it takes 2d6 radiant damage.\n\nA Cleric or Paladin may create Holy Water by performing a spec⁠ial ritual. The ritual takes 1 hour to perform, uses 25 gp worth of powdered silver, and requires the caster to expend a 1st-level spell slot.",
+      "value": 25.0
+    },
+    {
+      "weight": 1.0,
+      "id": 52,
+      "name": "Hourglass",
+      "description": "It helps track a simple hour of time. Useful to know when your short rest is up",
+      "value": 25.0
+    },
+    {
+      "weight": 25.0,
+      "id": 53,
+      "name": "Hunting Trap",
+      "description": "When you use your action to set it, this trap forms a saw-toothed steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree or a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 piercing damage and stop moving. Thereafter, until the creature breaks free of the trap, its Movement is limited by the length of the chain (typically 3 feet long). A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. Each failed check deals 1 piercing damage to the trapped creature.",
+      "value": 5.0
+    },
+    {
+      "weight": 0.0,
+      "id": 54,
+      "name": "Ink (1 Ounce Bottle)",
+      "description": "Comes in black, blue, and red varieties",
+      "value": 10.0
+    },
+    {
+      "weight": 0.0,
+      "id": 55,
+      "name": "Ink Pen",
+      "description": "For when a feather just doesn't cut it",
+      "value": 0.02
+    },
+    {
+      "weight": 4.0,
+      "id": 56,
+      "name": "Jug",
+      "description": "Normally filled with Wine or Water",
+      "value": 0.02
+    },
+    {
+      "weight": 4.0,
+      "id": 57,
+      "name": "Pitcher",
+      "description": "Mead maybe goes in this one?",
+      "value": 0.02
+    },
+    {
+      "weight": 25.0,
+      "id": 58,
+      "name": "Ladder (10-foot)",
+      "description": "Because finding another route isn't worth it",
+      "value": 0.1
+    },
+    {
+      "weight": 1.0,
+      "id": 59,
+      "name": "Lamp",
+      "description": "A lamp casts bright ligh⁠⁠t in a 15-foot radius and dim li⁠g⁠ht for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.",
+      "value": 0.5
+    },
+    {
+      "weight": 2.0,
+      "id": 60,
+      "name": "Lantern (Bullseye)",
+      "description": "A Bullseye lantern casts bright lig⁠⁠ht in a 60-foot cone and dim lig⁠ht for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.",
+      "value": 10.0
+    },
+    {
+      "weight": 2.0,
+      "id": 61,
+      "name": "Lantern (Hooded)",
+      "description": "A Hooded lantern casts bright lig⁠ht in a 30-foot radius and dim lig⁠ht for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the lig⁠ht to dim lig⁠ht in a 5-foot radius.",
+      "value": 5.0
+    },
+    {
+      "weight": 1.0,
+      "id": 62,
+      "name": "Lock (Basic)",
+      "description": "A key is provided with the lock. Without the key, a creature proficient with thieves’ tools can pick this lock with a successful DC 15 Dexterity check.",
+      "value": 10.0
+    },
+    {
+      "weight": 0.0,
+      "id": 63,
+      "name": "Magnifying Glass",
+      "description": "This lens allows a closer look at small Objects. It is also useful as a substitute for flint and steel when starting fires. Lighting a fire with a Magnifying glass requires lig⁠ht as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite. A Magnifying glass grants advantage on any ability check made to appraise or inspect an item that is small or highly detailed.",
+      "value": 100.0
+    },
+    {
+      "weight": 6.0,
+      "id": 64,
+      "name": "Manacles",
+      "description": "These metal restraints can bind a Small or Medium creature. Escaping the Manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check. Each set of Manacles comes with one key. Without the key, a creature proficient with thieves’ tools can pick the manacles’ lock with a successful DC 15 Dexterity check. Manacles have 15 Hit Points.",
+      "value": 2.0
+    },
+    {
+      "weight": 1.0,
+      "id": 65,
+      "name": "Mess Kit",
+      "description": "This tin box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan and the other as a plate or shallow bowl.",
+      "value": 0.2
+    },
+    {
+      "weight": 0.5,
+      "id": 66,
+      "name": "Mirror (Steel)",
+      "description": "Because Glass mirrors haven't been invented yet",
+      "value": 5.0
+    },
+    {
+      "weight": 1.0,
+      "id": 67,
+      "name": "Oil (Flask)",
+      "description": "Oil usually comes in a clay flask that holds 1 pint. As an action, you can splash the oil in this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. Make a ranged Attack against a target creature or object, treating the oil as an Improvised Weapon. On a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute), the target takes an additional 5 fire damage from the burning oil. You can also pour a flask of oil on the ground to cover a 5-foot-square area, provided that the surface is level. If lit, the oil burns for 2 rounds and deals 5 fire damage to any creature that enters the area or ends its turn in the area. A creature can take this damage only once per turn.",
+      "value": 0.1
+    },
+    {
+      "weight": 0.0,
+      "id": 68,
+      "name": "Paper (One Sheet)",
+      "description": "For taking notes",
+      "value": 0.2
+    },
+    {
+      "weight": 0.0,
+      "id": 69,
+      "name": "Parchment (One Sheet)",
+      "description": "When paper is too costly",
+      "value": 0.1
+    },
+    {
+      "weight": 0.0,
+      "id": 70,
+      "name": "Perfume (Vial)",
+      "description": "It kinda smells nice...",
+      "value": 5.0
+    },
+    {
+      "weight": 10.0,
+      "id": 71,
+      "name": "Pick Miner's",
+      "description": "We're off to work we go...",
+      "value": 2.0
+    },
+    {
+      "weight": 0.25,
+      "id": 72,
+      "name": "Piton",
+      "description": "Useful to jam into rocks or a hillside",
+      "value": 0.05
+    },
+    {
+      "weight": 0.0,
+      "id": 73,
+      "name": "Poison (Basic - Vial)",
+      "description": "You can use the poison in this vial to coat one slashing or piercing weapon or up to three pieces of Ammunition. Applying the poison takes an action. A creature hit by the Poisoned weapon or Ammunition must make a DC 10 Constitution saving throw or take 1d4 poison damage. Once applied, the poison retains potency for 1 minute before drying.",
+      "value": 100.0
+    },
+    {
+      "weight": 7.0,
+      "id": 74,
+      "name": "Pole (10 Foot)",
+      "description": "Poke. Poke. Poke... pit fall trap",
+      "value": 0.05
+    },
+    {
+      "weight": 10.0,
+      "id": 75,
+      "name": "Pot (Iron)",
+      "description": "Useful to cook with, also makes a blunt weapon",
+      "value": 2.0
+    },
+    {
+      "weight": 0.5,
+      "id": 76,
+      "name": "Potion of Healing (Lesser)",
+      "description": "A character who drinks the magical red fluid in this vial regains 2d4 + 2 Hit Points. Drinking or administering a potion takes an action.",
+      "value": 50.0
+    },
+    {
+      "weight": 1.0,
+      "id": 77,
+      "name": "Pouch",
+      "description": "A cloth or leather pouch can hold up to 20 Sling bullets or 50 Blowgun Needles, among other things. A compartmentalized pouch for holding spell Components is called a Component pouch (described earlier in this section).",
+      "value": 0.5
+    },
+    {
+      "weight": 1.0,
+      "id": 78,
+      "name": "Quiver",
+      "description": "A Quiver can hold up to 20 Arrows.",
+      "value": 1.0
+    },
+    {
+      "weight": 35.0,
+      "id": 79,
+      "name": "Ram (Portable)",
+      "description": "You can use a Portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check.",
+      "value": 4.0
+    }
+  ]
 }

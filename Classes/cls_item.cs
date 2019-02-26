@@ -28,7 +28,7 @@ namespace brothersGM.Classes {
        public double weight;
 
        public item() {
-           
+
        }
 
        public item(string n, string descr, double v, double w) {
@@ -45,14 +45,15 @@ namespace brothersGM.Classes {
            weight = w;
        }
 
-       public Embed toItem() {
+       public EmbedBuilder toItemEmbed() {
            var embed = new EmbedBuilder();
            embed.Title = name;
            embed.Description = description;
-           embed.AddField("Value",value,true);
-           embed.AddField("Weight",weight,true);
+           embed.AddField("Value in Gold",value,true);
+           embed.AddField("Weight in Pounds",weight,true);
            embed.WithColor(221, 162, 0);
-           return embed.Build();
+           embed.WithFooter("Base item ID: " + ID);
+           return embed;
        }
 
     }
@@ -82,7 +83,7 @@ namespace brothersGM.Classes {
             var store = new DataStore ("item.json");
 
             // Get employee collection
-            var rtrner = store.GetCollection<item> ().AsQueryable ().FirstOrDefault (e => e.name == name);
+            var rtrner = store.GetCollection<item> ().AsQueryable ().FirstOrDefault (e => e.name.Equals(name,StringComparison.InvariantCultureIgnoreCase));
             store.Dispose();
             return rtrner;
         }

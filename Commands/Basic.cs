@@ -19,27 +19,28 @@ namespace brothersGM.Commands
     public class Basic : ModuleBase<SocketCommandContext>
     {
         [Command("ping")]
-        public async Task pong() {
+        public async Task pongAsync() {
             await Context.Channel.SendMessageAsync("PONG");
         }
 
         [Command("item")]
-        public async Task showItem(int i) {
+        public async Task showItemAsync(int i) {
             item display = item.get_item(i);
-            if ( display != null) await Context.Channel.SendMessageAsync("", false, display.toItem());
+            if ( display != null) await Context.Channel.SendMessageAsync("", false, display.toItemEmbed().Build());
         }
 
         [Command("item")]
-        public async Task showItem(string name) {
+        public async Task showItemAsync(string name) {
             item display = item.get_item(name);
-            if ( display != null) await Context.Channel.SendMessageAsync("", false, display.toItem());
+            if ( display != null) await Context.Channel.SendMessageAsync("", false, display.toItemEmbed().Build());
         }
 
         [Command("add")]
-        public async Task addItem(string name, string description, double value, double weight) {
+        public async Task addItemAsync(string name, string description, double value, double weight) {
+            if ( Context.User.Id != 106768024857501696) return;
             item i = new item(name, description, value, weight);
             item.insert_item(i);
-            await Context.Channel.SendMessageAsync("Item added",false,i.toItem());
+            await Context.Channel.SendMessageAsync("Item added",false,i.toItemEmbed().Build());
         }
     }
 
