@@ -54,6 +54,7 @@ namespace brothersGM.Commands
                             int index = 1;
                         }
                     } else { // Regular User adding to store 
+                        player p = player.get_player(Context.User.Id);
                         await Context.Channel.SendMessageAsync("Fail 2");
                     }
                 } else if (inputs[0].Equals("gear",StringComparison.InvariantCultureIgnoreCase)) { // Standard Adventuring Gear
@@ -66,9 +67,19 @@ namespace brothersGM.Commands
                         int value;
                         if (Int32.TryParse(inputs[1], out value)) {
                             int start = (value - 1) * 25;
+                            if (start > market.Count) {
+                                await Context.Channel.SendMessageAsync(Context.User.Mention + ", sorry. There are only " + (market.Count / 25 + 1) + " pages available.");
+                                return;
+                            }
                             embed.WithFooter("Page " + value + " out of " + (market.Count / 25 + 1));
                             for (int i = 0; i < 25 && i+start < market.Count; i++) {
                                 embed.AddField(market[i+start].name,"Cost: " + market[i+start].cost + " GP | Quantity: " + market[i+start].quantity + " | ID: " + market[i+start].ID);
+                            }
+                        } else {
+                            // Couldn't parse page, display page 1
+                            embed.WithFooter("Page 1 out of " + (market.Count / 25 + 1));
+                            for (int i = 0; i < 25 && i < market.Count; i++) {
+                                embed.AddField(market[i].name,"Cost: " + market[i].cost + " GP | Quantity: " + market[i].quantity + " | ID: " + market[i].ID);
                             }
                         }
                         await Context.Channel.SendMessageAsync("",false,embed.Build());
@@ -77,13 +88,13 @@ namespace brothersGM.Commands
                     // Default Output
                     embed.WithFooter("Page 1 out of " + (market.Count / 25 + 1));
                     for (int i = 0; i < 25 && i < market.Count; i++) {
-                        embed.AddField(market[i].name,"Cost: " + market[i].cost + " GP | Quantity: " + market[i].quantity+ " | ID: " + market[i].ID);
+                        embed.AddField(market[i].name,"Cost: " + market[i].cost + " GP | Quantity: " + market[i].quantity + " | ID: " + market[i].ID);
                     }
                     await Context.Channel.SendMessageAsync("",false,embed.Build());
                 } else if (Int32.TryParse(inputs[0], out int id)) {
                     marketItem item = marketItem.get_marketItem(id);
                     if (item != null) {
-
+                        await Context.Channel.SendMessageAsync("",false, item.toMarketEmbed().Build());
                     } else {
                         await Context.Channel.SendMessageAsync(Context.User.Mention + ", this item ID doesn't exist. Please try again");
                     }

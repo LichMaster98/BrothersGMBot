@@ -559,6 +559,132 @@
       "name": "Ram (Portable)",
       "description": "You can use a Portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check.",
       "value": 4.0
+    },
+    {
+      "weight": 2.0,
+      "id": 80,
+      "name": "Rations",
+      "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts.",
+      "value": 0.5
+    },
+    {
+      "weight": 10.0,
+      "id": 81,
+      "name": "Rope (Hempen) [50 Feet]",
+      "description": "Rope, whether made of hemp or silk, has 2 Hit Points and can be burst with a DC 17 Strength check.",
+      "value": 1.0
+    },
+    {
+      "weight": 5.0,
+      "id": 82,
+      "name": "Rope (Silk) [50 Feet]",
+      "description": "Rope, whether made of hemp or silk, has 2 Hit Points and can be burst with a DC 17 Strength check.",
+      "value": 10.0
+    },
+    {
+      "weight": 0.5,
+      "id": 83,
+      "name": "Sack",
+      "description": "Not as easy to carry as a backpack",
+      "value": 0.01
+    },
+    {
+      "weight": 3.0,
+      "id": 84,
+      "name": "Merchant's Scale",
+      "description": "A scale includes a small balance, pans, and a suitable assortment of weights up to 2 pounds. With it, you can measure the exact weight of small Objects, such as raw precious metals or Trade Goods, to help determine their worth.",
+      "value": 5.0
+    },
+    {
+      "weight": 0.0,
+      "id": 85,
+      "name": "Sealing Wax",
+      "description": "Useful to assume a letter wasn't opened, unless of course someone knows mending",
+      "value": 0.5
+    },
+    {
+      "weight": 5.0,
+      "id": 86,
+      "name": "Shovel",
+      "description": "Better to dig a grave with than bear hands",
+      "value": 2.0
+    },
+    {
+      "weight": 0.0,
+      "id": 87,
+      "name": "Signal Whistle",
+      "description": "It makes a high pitched noise",
+      "value": 0.05
+    },
+    {
+      "weight": 0.0,
+      "id": 88,
+      "name": "Signet Ring",
+      "description": "A ring useful for nobility to identify themselves with",
+      "value": 5.0
+    },
+    {
+      "weight": 0.0,
+      "id": 89,
+      "name": "Soap",
+      "description": "To keep clean with",
+      "value": 0.02
+    },
+    {
+      "weight": 3.0,
+      "id": 90,
+      "name": "Spellbook",
+      "description": "Essential for wizards, a Spellbook is a leather-bound tome with 100 blank vellum pages suitable for recording Spells.",
+      "value": 50.0
+    },
+    {
+      "weight": 5.0,
+      "id": 91,
+      "name": "Spikes (Iron) [10]",
+      "description": "They are pointy",
+      "value": 1.0
+    },
+    {
+      "weight": 1.0,
+      "id": 92,
+      "name": "Spyglass",
+      "description": "Objects viewed through a Spyglass are magnified to twice their size.",
+      "value": 1000.0
+    },
+    {
+      "weight": 1.0,
+      "id": 93,
+      "name": "Tinderbox",
+      "description": "This small container holds flint, fire steel, and tinder (usually dry cloth soaked in lig⁠ht oil) used to kindle a fire. Using it to lig⁠ht a torch—or anything else with abundant, exposed fuel—takes an action. Lighting any other fire takes 1 minute.",
+      "value": 0.5
+    },
+    {
+      "weight": 1.0,
+      "id": 94,
+      "name": "Torch",
+      "description": "A torch burns for 1 hour, providing bright lig⁠ht in a 20-foot radius and dim lig⁠ht for an additional 20 feet. If you make a melee Attack with a burning torch and hit, it deals 1 fire damage.\n",
+      "value": 0.01
+    },
+    {
+      "weight": 0.0,
+      "id": 95,
+      "name": "Vial",
+      "description": "An empty container which holds 6 oz. of liquids",
+      "value": 1.0
+    },
+    {
+      "weight": 5.0,
+      "id": 96,
+      "name": "Waterskin",
+      "description": "Holds a pint of water",
+      "value": 0.2
+    },
+    {
+      "weight": 1.0,
+      "id": 97,
+      "name": "Whetsone",
+      "description": "",
+      "value": 0.01
     }
   ]
 }

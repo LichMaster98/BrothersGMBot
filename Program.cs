@@ -87,7 +87,7 @@ namespace brothersGM
                 {
                     var context = new SocketCommandContext(_client, message);
 
-                    var server_id = context.Guild.Id.ToString();
+                    //var server_id = context.Guild.Id.ToString();
 
                     var result = await _commands.ExecuteAsync(context, argPosition, _services);
                     if (!result.IsSuccess)
