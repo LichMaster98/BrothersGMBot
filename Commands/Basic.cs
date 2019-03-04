@@ -91,7 +91,46 @@ namespace brothersGM.Commands
         public async Task showArmorItemAsync(int i) {
             armorItem display = armorItem.get_armorItem(i);
             if ( display != null) await Context.Channel.SendMessageAsync("", false, display.toArmorEmbed().Build());
-            else await Context.Channel.SendMessageAsync(Context.User.Mention + ", sorry that ID doesn't match an item. Please use `bg!gear` for a list of items");
+            else await Context.Channel.SendMessageAsync(Context.User.Mention + ", sorry that ID doesn't match an item. Please use `bg!armor` for a list of items");
+        }
+
+        [Command("weapon")]
+        public async Task showWeaponsAsync() {
+            List<weapon> inv = weapon.get_weapon();
+            List<string> str = new List<string>();
+            str.Add("```md");
+            str.Add("< ID | Item Name | Weight | Value | Damage | Damage Type | Weapon Type | Properties >");
+            int count = 140;
+            weapon w;
+            for (int i = 0; i < inv.Count; i++) {
+                w = inv[i];
+                string toAdd = "";
+                if ( i%2 == 0) {
+                    toAdd = "> ";
+                } else {
+                    toAdd = "# ";
+                }
+                toAdd += i + ". | " + w.name + " | " + w.weight + " | " + w.value + " | " + w.damage + " | " + helpers.damageTypeToString(w.dType) + " | " + weapon.typeToString(w.wType) + w.propertiesList();
+                count += 2 + toAdd.Length;
+                if (count >= 2000 ) {
+                    str.Add("```");
+                    await Context.User.SendMessageAsync(String.Join(System.Environment.NewLine,str));
+                    str = new List<string>();
+                    str.Add("```md");
+                    str.Add("< ID | Item Name | Weight | Value | Damage | Damage Type | Weapon Type | Properties >");
+                    count = 140 + toAdd.Length;
+                }
+                str.Add(toAdd);
+            }
+            str.Add("```");
+            await Context.User.SendMessageAsync(String.Join(System.Environment.NewLine,str));
+        }
+
+        [Command("weapon")]
+        public async Task showWeaponItemAsync(int i) {
+            weapon display = weapon.get_weapon(i);
+            if ( display != null) await Context.Channel.SendMessageAsync("", false, display.toWeaponEmbed().Build());
+            else await Context.Channel.SendMessageAsync(Context.User.Mention + ", sorry that ID doesn't match an item. Please use `bg!weapon` for a list of items");
         }
 
         [Command("add")]
@@ -108,6 +147,28 @@ namespace brothersGM.Commands
             armorItem i = new armorItem(name,description,value,weight,ac,stealth,armorItem.stringToArmor(type));
             armorItem.insert_armorItem(i);
             await Context.Channel.SendMessageAsync("Armor Added",false,i.toArmorEmbed().Build());
+        }
+
+        [Command("wepAdd")]
+        public async Task addWeaponItemAsync(string name, double value, double weight, string damage, string Dtype, string Wtype) {
+            if ( Context.User.Id != 106768024857501696) return;
+            weapon w = new weapon(name,value,weight,damage,Dtype,Wtype);
+            weapon.insert_weapon(w);
+            await Context.Channel.SendMessageAsync("Weapon Added",false,w.toWeaponEmbed().Build());
+        }
+
+        [Command("wepProp")]
+        public async Task addWeaponPropertyAsync(int i, string property) {
+            if ( Context.User.Id != 106768024857501696) return;
+            weapon w = weapon.get_weapon(i);
+            if (w == null) await Context.Channel.SendMessageAsync(Context.User.Mention + ", you messed up");
+            else {
+                var prop = weapon.stringToProperty(property);
+                if (prop == weaponProperty.Null) return;
+                w.properties.Add(prop);
+                weapon.update_weapon(w);
+                await Context.Channel.SendMessageAsync("Added property",false,w.toWeaponEmbed().Build());
+            }
         }
     }
 
