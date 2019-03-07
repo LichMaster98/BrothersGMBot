@@ -51,6 +51,44 @@ namespace brothersGM.Commands
 
         }
 
+        [Command("playerImg")]
+        public async Task addImageAsync(string s) {
+            player p = player.get_player(Context.User.Id);
+            if ( p == null) {
+                await Context.Channel.SendMessageAsync(Context.User.Mention + ", there isn't a player with that ID in the system");
+                return;
+            }
+            p.image.link = s;
+            player.update_player(p);
+            await Context.Channel.SendMessageAsync(Context.User.Mention + ", you have added your link to the player. It will need to be approved before showing up in your character profile.");
+        }
+
+        [Command("linkApprove")]
+        public async Task approveLinkAsync(int i) {
+            player p = player.get_player(i);
+            if ( p == null) {
+                await Context.Channel.SendMessageAsync(Context.User.Mention + ", there isn't a player with that ID in the system");
+                return;
+            }
+            if (Context.Guild.GetUser(Context.User.Id).Roles.FirstOrDefault(e => e.Name.Equals("Moderator God",StringComparison.InvariantCultureIgnoreCase)) != null || Context.User.Id == 106768024857501696) {
+                p.image.approve = !p.image.approve;
+                await Context.Channel.SendMessageAsync("", false, p.toPlayerEmbed(Context.Guild).Build());
+                player.update_player(p);
+            }
+        }
+
+        [Command("linkPreview")]
+        public async Task linkPreviewAsync(int i) {
+            player p = player.get_player(i);
+            if ( p == null) {
+                await Context.Channel.SendMessageAsync(Context.User.Mention + ", there isn't a player with that ID in the system");
+                return;
+            }
+            if (Context.Guild.GetUser(Context.User.Id).Roles.FirstOrDefault(e => e.Name.Equals("Moderator God",StringComparison.InvariantCultureIgnoreCase)) != null || Context.User.Id == 106768024857501696) {
+                await Context.Channel.SendMessageAsync(p.image.link);
+            }
+        }
+
         [Command("invadd")]
         public async Task addItemToInvAsync(string type, double i) {
             player p = player.get_player(Context.User.Id);

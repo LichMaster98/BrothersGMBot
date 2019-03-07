@@ -1,4 +1,19 @@
 {
-    "weapon": [
-    ]
+  "weapon": [
+    {
+      "quantity": 0,
+      "shortDescription": null,
+      "seller": 0,
+      "weight": 2.0,
+      "properties": [],
+      "damage Dice": "1d4",
+      "damage Type": 1,
+      "weapon Type": 0,
+      "cost": 0.0,
+      "id": 0,
+      "name": "Club",
+      "description": null,
+      "value": 0.1
+    }
+  ]
 }

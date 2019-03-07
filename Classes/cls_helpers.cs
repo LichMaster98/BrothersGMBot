@@ -28,7 +28,13 @@ namespace brothersGM.Classes {
         Null
     }
 
+    public class linkApproval {
+        public string link;
+        public bool approve;
+    }
+
     public class helpers {
+
         public static string damageTypeToString(damageType t) {
             switch (t) {
                 case damageType.Acid:

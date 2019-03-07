@@ -561,7 +561,7 @@
       "value": 4.0
     },
     {
-      "weight": 2.0,
+      "weight": 1.0,
       "id": 80,
       "name": "Rations",
       "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts.",

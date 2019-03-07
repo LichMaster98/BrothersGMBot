@@ -40,7 +40,7 @@ namespace brothersGM.Classes {
         public List<item> inventory { get; set; } = new List<item>();
 
         [JsonProperty("Image")]
-        public Tuple<string, bool> image { get; set; } = new Tuple<string, bool>("",false);
+        public linkApproval image { get; set; } = new linkApproval();
 
         [JsonProperty("Color")]
         public byte[] colors { get; set; } = {0,0,0};
@@ -70,7 +70,7 @@ namespace brothersGM.Classes {
             embed.AddField("Class", Class, true);
             embed.WithColor(colors[0], colors[1], colors[2]);
             embed.WithFooter("Player ID: " + ID, "https://thebrothersgm.files.wordpress.com/2018/02/cropped-transparent-blog-logo1.png");
-            if (image.Item2) embed.WithThumbnailUrl(image.Item1);
+            if (image.approve) embed.WithThumbnailUrl(image.link);
             return embed;
         }
     }

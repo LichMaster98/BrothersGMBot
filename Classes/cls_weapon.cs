@@ -61,7 +61,7 @@ namespace brothersGM.Classes {
         public EmbedBuilder toWeaponEmbed() {
             EmbedBuilder embed = this.toItemEmbed();
             embed.WithFooter("Weapon Item ID: " + ID);
-            embed.AddField("Damage",damage,true);
+            embed.AddField("Damage",damage +" " + helpers.damageTypeToString(dType),true);
             embed.AddField("Weapon Type", weapon.typeToString(wType));
             foreach (weaponProperty w in properties) {
                 embed.AddField(weapon.propertyToName(w),weapon.propertyDetail[w]);
