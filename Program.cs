@@ -92,6 +92,7 @@ namespace brothersGM
                     var result = await _commands.ExecuteAsync(context, argPosition, _services);
                     if (!result.IsSuccess)
                     {
+                        /// TO DO - CHECK IF IN DM
                         var channel = context.Guild.Channels.FirstOrDefault(e => e.Name == "bot-commands") as ISocketMessageChannel;
 
                         if (channel != null) await channel.SendMessageAsync(result.ErrorReason);

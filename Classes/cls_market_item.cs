@@ -31,7 +31,6 @@ namespace brothersGM.Classes {
             quantity = q;
             shortDesc = sd;
         }
-
         
         public marketItem(item Item, double c, int q, ulong sI) {
             name = Item.name;

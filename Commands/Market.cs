@@ -53,9 +53,6 @@ namespace brothersGM.Commands
                             string name;
                             int index = 1;
                         }
-                    } else { // Regular User adding to store 
-                        player p = player.get_player(Context.User.Id);
-                        await Context.Channel.SendMessageAsync("Fail 2");
                     }
                 } else if (inputs[0].Equals("gear",StringComparison.InvariantCultureIgnoreCase)) { // Standard Adventuring Gear
                     List<marketItem> market = marketItem.get_marketItem();
@@ -91,6 +88,97 @@ namespace brothersGM.Commands
                         embed.AddField(market[i].name,"Cost: " + market[i].cost + " GP | Quantity: " + market[i].quantity + " | ID: " + market[i].ID);
                     }
                     await Context.Channel.SendMessageAsync("",false,embed.Build());
+                } else if (inputs[0].Equals("sell",StringComparison.InvariantCultureIgnoreCase)) {
+                    if (inputs.Length <3) {
+                        await Context.Channel.SendMessageAsync(Context.User.Mention + ", try `bg!market sell [Inv ID] [Price]`");
+                        return;
+                    }
+                    player p = player.get_player(Context.User.Id);
+                    if (p == null) {
+                        await Context.Channel.SendMessageAsync(Context.User.Mention + ", there isn't a player with that ID in the system");
+                        return;
+                    }
+                    // input[1] - Item to Sell
+                    // input[2] - Cost on the Market
+                    if (Int32.TryParse(inputs[1], out int numItem)) {
+                        if (numItem >= p.inventory.Count) {
+                            await Context.Channel.SendMessageAsync(Context.User.Mention + ", the item ID doesn't exist. Try `bg!market sell [Inv ID] [Price]` or check `bg!inventory`");
+                            return;
+                        }
+                        if (Double.TryParse(inputs[2], out double price)) {
+                            armorItem aI = p.inventory[numItem] as armorItem;
+                            // Add Weapon Item
+                            if (aI != null) {
+                                aI.cost = price;
+                                aI.sellerID = p.discordID;
+                                aI.quantity = 1;
+                                p.inventory.RemoveAt(numItem);
+                                player.update_player(p);
+                                marketItem.insert_marketItem(aI);
+                                await Context.Channel.SendMessageAsync(Context.User.Mention + ", added a new market item.",false,aI.toMarketEmbed().Build());
+                                return;
+                            }
+                            marketItem itm = new marketItem(p.inventory[numItem],price,1,p.discordID);
+                            p.inventory.RemoveAt(numItem);
+                            marketItem.insert_marketItem(itm);
+                            player.update_player(p);
+                            await Context.Channel.SendMessageAsync(Context.User.Mention + ", added a new market item.",false,itm.toMarketEmbed().Build());
+                            return;
+                        } else {
+                            await Context.Channel.SendMessageAsync(Context.User.Mention + ", the price was invalid. Try `bg!market sell " + numItem + " [Price]`");
+                            return;
+                        }
+                    } else {
+                        await Context.Channel.SendMessageAsync(Context.User.Mention + ", the item ID was invalid. Try `bg!market sell [Inv ID] [Price]`");
+                        return;
+                    }
+                } else if (inputs[0].Equals("buy",StringComparison.InvariantCultureIgnoreCase)) {
+                    // inputs[1] = ID to buy
+                    if (inputs.Length != 2) {
+                        await Context.Channel.SendMessageAsync(Context.User.Mention + ", try `bg!market buy [Market ID]`");
+                    }
+                    player p = player.get_player(Context.User.Id);
+                    if (p == null) {
+                        await Context.Channel.SendMessageAsync(Context.User.Mention + ", there isn't a player with that ID in the system");
+                        return;
+                    }
+                    if (Int32.TryParse(inputs[1],out int itemToBuy)) {
+                        marketItem i = marketItem.get_marketItem(itemToBuy);
+                        if (p.gold-i.cost < 0) {
+                            await Context.Channel.SendMessageAsync(Context.User.Mention + ", you don't have the gold to afford this purchase.");
+                            return;
+                        }
+                        if(p.discordID == i.sellerID) {
+                            await Context.Channel.SendMessageAsync(Context.User.Mention + ", You can't buy your own item. To cancel an item on the market use `bg!market cancel [Market ID]`");
+                            return;
+                        }
+                        p.gold -= i.cost;
+                        i.quantity--;
+                        if (i.quantity == 0) {
+                            marketItem.delete_marketItem(i);
+                        }
+                        string sellerName = "Market"; /// Set basio name here
+                        if (i.sellerID != 548668447719161858) {
+                            player seller = player.get_player(i.sellerID);
+                            seller.gold += i.cost;
+                            sellerName = seller.name;
+                            await Context.Guild.GetUser(seller.discordID).SendMessageAsync("Your " + i.name + " has sold on the market and you have earned " + i.cost + " gold value");
+                            player.update_player(seller);
+                        }
+                        // Try for Weapon
+                        armorItem aI = i as armorItem;
+                        if (aI != null) {
+                            p.inventory.Add(aI);
+                            await Context.Channel.SendMessageAsync(Context.User.Mention + " you have purchased " + i.name + " from " + sellerName + " for " + i.cost + " gold equivelent.");
+                            player.update_player(p);
+                            return;
+                        }
+                        p.inventory.Add(i);
+                        await Context.Channel.SendMessageAsync(Context.User.Mention + " you have purchased " + i.name + " from " + sellerName + " for " + i.cost + " gold equivelent.");
+                        player.update_player(p);
+                    } else {
+                        await Context.Channel.SendMessageAsync(Context.User.Mention + ", you didn't provide a valid item ID to buy");
+                    }
                 } else if (Int32.TryParse(inputs[0], out int id)) {
                     marketItem item = marketItem.get_marketItem(id);
                     if (item != null) {
